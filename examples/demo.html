@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Load lodash -->
+
+        <script src="../node_modules/lodash/lodash.js"></script>
+        <script>
+          // Load lodash from cdn if not found locally
+          if(typeof(_) == 'undefined'){
+            let head = document.getElementsByTagName('head')[0];
+            let js = document.createElement("script");
+            js.type = "text/javascript";
+            js.src = "https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.js";
+            head.appendChild(js);
+          }
+        </script>
+        <script src="../miniplot.js"></script>
+        <script>
+          function generate_plot(){
+            let intercept = 1;
+            let slope = .5;
+            let X = _.range(50).map( () => _.random(-10, 10, true)); // 50 Random values
+            let line = X.map( x => intercept + slope * x);           // True regression line
+            let Y = line.map( y => y + _.random(-1, 1, true) )       // Add noise
+
+            plot = new Plot([-12, 12],  // x-axis limits
+                            [-12, 12]); // y-axis limits
+            plot.add_points(X, Y, 'red')
+            plot.add_line(X, line, 'blue');
+            plot.render_in_element('plot-container')
+          }
+          window.onload = generate_plot;
+
+        </script>
+        <style>
+          #wrapper {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        </style>
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <div id="plot-container"></div>
+            <p>Click the plot to delete it</p>
+            <button onclick="generate_plot()">Click here to generate plot</button>
+        </div>
+
+    </body>
+</html>
