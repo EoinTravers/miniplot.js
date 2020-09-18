@@ -20,7 +20,8 @@ plot.add_points(X, Y, 'red')
 plot.add_line(X, line, 'blue');
 plot.render_in_element('plot-container')
 ```
-<img style="width: 600px;" alt="" src="examples/imgs/eg1.svg"/>
+
+<img style="width: 600px;" alt="" src="https://raw.githubusercontent.com/EoinTravers/miniplot.js/master/examples/imgs/eg1.svg"/>
 
 
 Or, if running on node
@@ -67,4 +68,4 @@ plot.add_line(times, X, 'red');
 plot.render_in_element('plot-container')
 ```
 
-<img style="width: 600px;" alt="" src="examples/imgs/eg2.svg"/>
+<img style="width: 600px;" alt="" src="https://raw.githubusercontent.com/EoinTravers/miniplot.js/master/examples/imgs/eg2.svg"/>
