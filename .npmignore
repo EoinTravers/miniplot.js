@@ -1,4 +1,6 @@
 .ipynb_checkpoints/
+*.ipynb
+examples/imgs/
 node_modules/
 pnpm-lock.yaml
 #*
